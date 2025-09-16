@@ -68,3 +68,17 @@ int get_line(const Chunk* chunk,int instruction_index) {
     //should not happen
     return -1;
 }
+
+void write_constant(Chunk* chunk, const Value value, const int line) {
+    const int constant_index = add_constant(chunk,value);
+    if (constant_index <= 0xFF) {
+        write_chunk(chunk,OP_CONSTANT,line);
+        write_chunk(chunk, (uint8_t)constant_index,line);
+    }else {
+        write_chunk(chunk,OP_CONSTANT_LONG,line);
+        write_chunk(chunk,(uint8_t)(constant_index & 0xFF),line);
+        write_chunk(chunk,(uint8_t)((constant_index >> 8) & 0xFF),line);
+        write_chunk(chunk,(uint8_t)((constant_index >> 16) & 0xFF),line);
+
+    }
+}
