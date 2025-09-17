@@ -8,4 +8,6 @@ add_executable(clox main.c
         memory.c
         debug.c
         value.c
-        vm.c)
+        vm.c
+        compiler.c
+        scanner.c)
