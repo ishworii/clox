@@ -38,6 +38,20 @@ static void run_file(const char* path) {
     if (result == INTERPRET_RUNTIME_ERROR) exit(70);
 }
 
+static void repl() {
+    char line[1024];
+    for (;;) {
+        printf("> ");
+
+        if (!fgets(line, sizeof(line), stdin)) {
+            printf("\n");
+            break;
+        }
+
+        interpret(line);
+    }
+}
+
 int main(const int argc, const char* argv[]) {
     initVM();
     if (argc == 1) {

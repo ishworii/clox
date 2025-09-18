@@ -83,6 +83,10 @@ static void skip_whitespaces() {
                 scanner.line++;
                 advance();
                 break;
+            case '\n':
+                scanner.line++;
+                advance();
+                break;
             case '/':
                 if (peek_next() == '/') {
                     while (peek() != '\n' && !is_at_end()) advance();
@@ -164,7 +168,7 @@ static Token string() {
 Token scan_token() {
     skip_whitespaces();
     scanner.start = scanner.current;
-    if (is_at_end()) return make_token(EOF);
+    if (is_at_end()) return make_token(TOKEN_EOF);
     char c = advance();
     if (is_alpha(c)) return identifier();
     if (is_digit(c)) return number();
