@@ -10,4 +10,5 @@ add_executable(clox main.c
         value.c
         vm.c
         compiler.c
-        scanner.c)
+        scanner.c
+        object.c)
