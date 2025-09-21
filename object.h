@@ -3,6 +3,7 @@
 
 #include "common.h"
 #include "value.h"
+#include <cstdint>
 
 #define OBJ_TYPE(value) (AS_OBJ(value)->type)
 #define IS_STRING(value) is_obj_type(value,OBJ_STRING)
@@ -22,6 +23,7 @@ struct ObjString {
     Obj obj;
     int length;
     char* chars;
+    uint32_t hash;
 };
 
 ObjString* take_string(char* chars,int length);
