@@ -3,7 +3,6 @@
 
 #include "common.h"
 #include "value.h"
-#include <cstdint>
 
 #define OBJ_TYPE(value) (AS_OBJ(value)->type)
 #define IS_STRING(value) is_obj_type(value,OBJ_STRING)
