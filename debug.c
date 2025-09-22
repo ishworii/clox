@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "debug.h"
+#include "chunk.h"
 #include "value.h"
 
 void disassemble_chunk(const Chunk* chunk, const char* name) {
@@ -75,6 +76,16 @@ int disassemble_instruction(const Chunk* chunk, const int offset) {
             return simple_instruction("OP_MULTIPLY",offset);
         case OP_DIVIDE:
             return simple_instruction("OP_DIVIDE",offset);
+        case OP_PRINT:
+            return simple_instruction("OP_PRINT",offset);
+        case OP_POP:
+            return simple_instruction("OP_POP", offset);
+        case OP_DEFINE_GLOBAL:
+            return simple_instruction("OP_DEFINE_GLOBAL",offset);
+        case OP_GET_GLOBAL:
+            return simple_instruction("OP_GET_GLOBAL",offset);
+        case OP_SET_GLOBAL:
+            return constant_instruction("OP_SET_GLOBAL", chunk, offset);
         default:
             printf("Unknown opcode %d\n",instruction);
             return offset + 1;
