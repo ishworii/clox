@@ -3,6 +3,7 @@
 #include "vm.h"
 #include "compiler.h"
 
+#include <stdint.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
@@ -179,6 +180,16 @@ static InterpretResult run() {
                     runtime_error("Undefined variable '%s'",name->chars);
                     return INTERPRET_RUNTIME_ERROR;
                 }
+                break;
+            }
+            case OP_GET_LOCAL: {
+                uint8_t slot = READ_BYTE();
+                push(vm.stack[slot]);
+                break;
+            }
+            case OP_SET_LOCAL: {
+                uint8_t slot = READ_BYTE();
+                vm.stack[slot] = peek(0);
                 break;
             }
            
