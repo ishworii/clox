@@ -220,7 +220,7 @@ static void string(bool can_assign) {
 
 static void named_variable(Token name,bool can_assign){
     uint8_t get_op,set_op;
-    uint8_t arg = resolve_local(current,&name);
+    int arg = resolve_local(current,&name);
     if(arg != -1){
         get_op = OP_GET_LOCAL;
         set_op = OP_SET_LOCAL;
