@@ -1,0 +1,62 @@
+// Variable declaration and assignment test
+print "=== Variables Test ===";
+
+// Basic variable declaration
+var a = 10;
+var b = 20;
+print "a =";
+print a;
+print "b =";
+print b;
+
+// Variable assignment
+a = 15;
+print "After assignment, a =";
+print a;
+
+// Arithmetic with variables
+var sum = a + b;
+var difference = b - a;
+var product = a * b;
+var quotient = b / a;
+
+print "sum =";
+print sum;
+print "difference =";
+print difference;
+print "product =";
+print product;
+print "quotient =";
+print quotient;
+
+// String variables
+var greeting = "Hello";
+var name = "World";
+var message = greeting + ", " + name + "!";
+print message;
+
+// Boolean variables
+var is_true = true;
+var is_false = false;
+print "is_true =";
+print is_true;
+print "is_false =";
+print is_false;
+
+// Variable scoping
+var outer = "outer scope";
+print "Before block:";
+print outer;
+
+{
+    var inner = "inner scope";
+    print "Inside block:";
+print inner;
+    print "Outer from inner:";
+print outer;
+}
+
+print "After block:";
+print outer;
+
+print "=== Variables Test Complete ===";

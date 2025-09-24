@@ -1,0 +1,45 @@
+// If-else conditional test
+print "=== If-Else Test ===";
+
+// Basic if statement
+var x = 10;
+if (x > 5) {
+    print "x is greater than 5";
+}
+
+// If-else statement
+var y = 3;
+if (y > 5) {
+    print "y is greater than 5";
+} else {
+    print "y is not greater than 5";
+}
+
+// Nested if-else
+var score = 85;
+if (score >= 90) {
+    print "Grade: A";
+} else {
+    if (score >= 80) {
+        print "Grade: B";
+    } else {
+        if (score >= 70) {
+            print "Grade: C";
+        } else {
+            print "Grade: F";
+        }
+    }
+}
+
+// Complex conditions
+var a = 15;
+var b = 20;
+if (a < b and a > 10) {
+    print "a is between 10 and b";
+}
+
+if (a > 20 or b > 15) {
+    print "Either a > 20 or b > 15 (or both)";
+}
+
+print "=== If-Else Test Complete ===";

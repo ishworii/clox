@@ -1,0 +1,62 @@
+// Boolean logic and comparison test
+print "=== Boolean Logic Test ===";
+
+// Boolean literals
+var true_val = true;
+var false_val = false;
+
+print "Boolean values:";
+print true_val;
+print false_val;
+
+// Logical operators
+print "Logical AND:";
+print "true and true =";
+print true and true;
+print "true and false =";
+print true and false;
+print "false and false =";
+print false and false;
+
+print "Logical OR:";
+print "true or false =";
+print true or false;
+print "false or false =";
+print false or false;
+
+print "Logical NOT:";
+print "!true =";
+print !true;
+print "!false =";
+print !false;
+
+// Comparison operators
+var x = 10;
+var y = 20;
+
+print "Comparisons:";
+print "10 < 20 =";
+print x < y;
+
+print "10 > 20 =";
+print x > y;
+
+print "10 <= 20 =";
+print x <= y;
+
+print "10 >= 20 =";
+print x >= y;
+
+print "10 == 20 =";
+print x == y;
+
+print "10 != 20 =";
+print x != y;
+
+// Equality with same values
+var same1 = 15;
+var same2 = 15;
+print "15 == 15 =";
+print same1 == same2;
+
+print "=== Boolean Logic Test Complete ===";

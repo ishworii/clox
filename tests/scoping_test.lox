@@ -1,0 +1,74 @@
+// Variable scoping test
+print "=== Scoping Test ===";
+
+// Global scope
+var global_var = "global";
+print "Global variable:";
+print global_var;
+
+// Block scope
+print "Entering block scope:";
+{
+    var block_var = "block";
+    print "Block variable:";
+    print block_var;
+
+    print "Global from block:";
+    print global_var;
+
+    // Shadow global variable
+    var global_var = "shadowed global";
+    print "Shadowed global:";
+    print global_var;
+
+    // Nested block
+    {
+        var nested_var = "nested";
+        print "Nested variable:";
+        print nested_var;
+
+        print "Block var from nested:";
+        print block_var;
+
+        // Shadow block variable
+        var block_var = "shadowed block";
+        print "Shadowed block var:";
+        print block_var;
+    }
+
+    // Back to block scope
+    print "Back to block scope:";
+    print block_var;
+}
+
+// Back to global scope
+print "Back to global scope:";
+print global_var;
+
+// Variable assignment vs declaration
+var x = "original";
+print "Original x:";
+print x;
+
+{
+    print "x before assignment:";
+    print x;
+
+    x = "modified";
+    print "x after assignment:";
+    print x;
+}
+
+print "x in global after block:";
+print x;
+
+// Test with loops
+print "Scoping in for loop:";
+for (var i = 1; i <= 2; i = i + 1) {
+    var loop_var = "loop";
+    print "Loop iteration:";
+    print i;
+    print loop_var;
+}
+
+print "=== Scoping Test Complete ===";

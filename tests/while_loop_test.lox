@@ -1,0 +1,30 @@
+// While loop test - basic functionality
+print "=== While Loop Test ===";
+
+// Basic while loop
+print "Countdown from 5:";
+var count = 5;
+while (count > 0) {
+    print count;
+    count = count - 1;
+}
+print "Liftoff!";
+
+// While loop with accumulator
+print "Powers of 2 (up to 64):";
+var power = 1;
+while (power <= 64) {
+    print power;
+    power = power * 2;
+}
+
+// While loop with condition check
+print "Finding first number divisible by 7 greater than 20:";
+var num = 21;
+while (num - (num / 7) * 7 != 0) {
+    num = num + 1;
+}
+print "Found:";
+print num;
+
+print "=== While Loop Test Complete ===";

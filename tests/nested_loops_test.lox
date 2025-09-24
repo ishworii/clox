@@ -1,0 +1,52 @@
+// Nested loops test
+print "=== Nested Loops Test ===";
+
+// Simple nested loops - multiplication table
+print "3x3 Multiplication table:";
+for (var i = 1; i <= 3; i = i + 1) {
+    for (var j = 1; j <= 3; j = j + 1) {
+        print i * j;
+    }
+}
+
+print "Pattern with nested loops:";
+for (var row = 1; row <= 4; row = row + 1) {
+    print "Row:";
+    print row;
+
+    for (var col = 1; col <= row; col = col + 1) {
+        print col;
+    }
+}
+
+// Nested while loops
+print "Nested while loops (countdown matrix):";
+var outer = 3;
+while (outer > 0) {
+    print "Outer:";
+    print outer;
+
+    var inner = 2;
+    while (inner > 0) {
+        print "  Inner:";
+        print inner;
+        inner = inner - 1;
+    }
+    outer = outer - 1;
+}
+
+// Mixed loop types
+print "Mixed loop types (for inside while):";
+var count = 2;
+while (count > 0) {
+    print "While iteration:";
+    print count;
+
+    for (var k = 1; k <= 2; k = k + 1) {
+        print "  For iteration:";
+        print k;
+    }
+    count = count - 1;
+}
+
+print "=== Nested Loops Test Complete ===";

@@ -1,0 +1,62 @@
+// Prime number detection test
+print "=== Prime Test ===";
+
+// Test if 17 is prime
+var test_num = 17;
+var is_prime = true;
+
+print "Testing if";
+print test_num;
+print "is prime:";
+
+if (test_num <= 1) {
+    is_prime = false;
+} else {
+    // Check for divisors from 2 to sqrt(test_num)
+    for (var divisor = 2; divisor * divisor <= test_num; divisor = divisor + 1) {
+        // Check if divisor divides test_num evenly
+        var remainder = test_num - (test_num / divisor) * divisor;
+        if (remainder == 0) {
+            is_prime = false;
+            print "Found divisor:";
+            print divisor;
+        }
+    }
+}
+
+if (is_prime) {
+    print test_num;
+    print "is prime";
+} else {
+    print test_num;
+    print "is not prime";
+}
+
+// Test a few more numbers
+print "Testing more numbers:";
+
+// Test 12 (not prime)
+var num12 = 12;
+var prime12 = true;
+for (var d = 2; d * d <= num12; d = d + 1) {
+    if (num12 - (num12 / d) * d == 0) {
+        prime12 = false;
+    }
+}
+
+print "12 is prime:";
+print prime12;
+
+// Test 13 (prime)
+var num13 = 13;
+var prime13 = true;
+for (var d = 2; d * d <= num13; d = d + 1) {
+    if (num13 - (num13 / d) * d == 0) {
+        prime13 = false;
+    }
+}
+
+print "13 is prime:";
+print prime13;
+
+print "=== Prime Test Complete ===";
